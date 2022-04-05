@@ -1,0 +1,11 @@
+name: Gradle Check
+
+on:
+  push:
+    branches-ignore:
+    - develop
+
+jobs:
+  gradle-check:
+    name: Gradle Check
+    uses: interlok-tooling/reusable-workflows/.github/workflows/gradle-check.yml@main
