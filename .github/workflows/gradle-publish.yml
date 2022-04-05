@@ -9,4 +9,4 @@ on:
 
 jobs:
   gradle-publish:
-    uses: interlok-tooling/gradle-publish/.github/workflows/action.yml@main
+    uses: interlok-tooling/reusable-workflows/.github/workflows/gradle-publish.yml@main
