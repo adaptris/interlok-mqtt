@@ -9,4 +9,4 @@ on:
 jobs:
   gradle-check:
     name: Gradle Check
-    uses: interlok-tooling/reusable-workflows/.github/workflows/gradle-check.yml@main
+    uses: interlok-tooling/reusable-workflows/.github/workflows/gradle-check.yml@v1.0.0
