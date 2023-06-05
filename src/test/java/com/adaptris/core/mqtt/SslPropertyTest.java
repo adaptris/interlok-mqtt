@@ -16,14 +16,14 @@
 
 package com.adaptris.core.mqtt;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.Properties;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.adaptris.interlok.junit.scaffolding.BaseCase;
 import com.adaptris.security.exc.PasswordException;
-
 
 public class SslPropertyTest extends BaseCase {
 
@@ -118,7 +118,7 @@ public class SslPropertyTest extends BaseCase {
 
     SslProperty.getIgnoreCase("doesntExist").applyProperty(sslContextProperties, "value");
 
-    Assert.assertEquals(0, sslContextProperties.size());
+    assertEquals(0, sslContextProperties.size());
   }
 
   private void testProperty(String key, String value) throws PasswordException {
@@ -130,8 +130,8 @@ public class SslPropertyTest extends BaseCase {
   }
 
   private void assertProperty(Properties sslContextProperties, String key, String expectedValue) {
-    Assert.assertEquals(1, sslContextProperties.size());
-    Assert.assertEquals(expectedValue, sslContextProperties.getProperty(key));
+    assertEquals(1, sslContextProperties.size());
+    assertEquals(expectedValue, sslContextProperties.getProperty(key));
   }
 
 }
