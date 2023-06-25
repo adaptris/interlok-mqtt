@@ -16,14 +16,16 @@
 
 package com.adaptris.core.mqtt;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.eclipse.paho.client.mqttv3.MqttAsyncClient;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+
 import com.adaptris.interlok.junit.scaffolding.BaseCase;
 import com.adaptris.util.KeyValuePair;
 import com.adaptris.util.KeyValuePairSet;
@@ -58,7 +60,7 @@ public class MqttConnectionTest extends BaseCase {
   }
 
   // We're not really testing anything here
-  @Ignore
+  @Disabled
   @Test
   public void testStart() throws Exception {
     MqttConnection mqttConnectionOptions = initMqttConnectionOptions();
@@ -104,4 +106,5 @@ public class MqttConnectionTest extends BaseCase {
     mqttConnection.setServerUri("tcp://127.0.0.1:1883");
     return mqttConnection;
   }
+
 }
