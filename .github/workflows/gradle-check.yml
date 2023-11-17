@@ -9,3 +9,4 @@ jobs:
   gradle-check:
     name: Gradle Check
     uses: interlok-tooling/reusable-workflows/.github/workflows/gradle-check.yml@main
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

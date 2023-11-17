@@ -17,17 +17,15 @@
 package com.adaptris.core.mqtt;
 
 import static com.adaptris.interlok.junit.scaffolding.jms.JmsProducerCase.assertMessages;
-import org.junit.Test;
-import com.adaptris.interlok.junit.scaffolding.ExampleProducerCase;
+
+import org.junit.jupiter.api.Test;
+
 import com.adaptris.core.StandaloneConsumer;
 import com.adaptris.core.StandaloneProducer;
 import com.adaptris.core.stubs.MockMessageListener;
+import com.adaptris.interlok.junit.scaffolding.ExampleProducerCase;
 
 public class MqttProducerTest extends ExampleProducerCase {
-
-  public MqttProducerTest() {
-    super();
-  }
 
   @Test
   public void testSingleProduce() throws Exception {
