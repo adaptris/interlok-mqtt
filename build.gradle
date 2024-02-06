@@ -4,9 +4,9 @@ plugins {
   id "jacoco"
   // Manage optional dependencies in maven pom.
   id "nebula.optional-base" version "7.0.0"
-  id "com.github.spotbugs" version "5.2.1"
+  id "com.github.spotbugs" version "6.0.6"
   id "org.sonarqube" version "4.4.1.3373"
-  id "org.owasp.dependencycheck" version "8.4.2"
+  id "org.owasp.dependencycheck" version "9.0.8"
   id "io.freefair.lombok" version "8.4"
 }
 
@@ -29,7 +29,7 @@ ext {
   componentDesc = "Use a MQTT broker as a messaging platform"
   organizationName = "Adaptris Ltd"
   organizationUrl = "http://www.adaptris.com"
-  slf4jVersion = "2.0.9"
+  slf4jVersion = "2.0.11"
   mockitoVersion = '5.2.0'
   activeMqVersion = "5.18.3"
 }
@@ -137,7 +137,7 @@ dependencies {
 
   annotationProcessor ("com.adaptris:interlok-core-apt:$interlokCoreVersion") { changing= true}
 
-  testImplementation ("org.junit.jupiter:junit-jupiter-engine:5.10.0")
+  testImplementation ("org.junit.jupiter:junit-jupiter-engine:5.10.1")
   testImplementation ("org.slf4j:slf4j-simple:$slf4jVersion")
   testImplementation ("com.adaptris:interlok-stubs:$interlokCoreVersion") { changing= true }
   testImplementation ("org.mockito:mockito-core:$mockitoVersion")
@@ -290,8 +290,8 @@ task deleteGeneratedFiles(type: Delete) {
 }
 
 spotbugsMain {
-  effort = "max"
-  reportLevel = "high"
+  effort = com.github.spotbugs.snom.Effort.valueOf("MAX")
+  reportLevel = com.github.spotbugs.snom.Confidence.valueOf("HIGH")
   reports {
     xml {
       required.set(false)
