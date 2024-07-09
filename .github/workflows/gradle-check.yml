@@ -5,8 +5,14 @@ on:
     branches-ignore:
     - develop
 
+permissions: read-all
+
 jobs:
   gradle-check:
     name: Gradle Check
     uses: interlok-tooling/reusable-workflows/.github/workflows/gradle-check.yml@main
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    secrets:
+      NEXUS_REPO_PASSWORD: ${{ secrets.NEXUS_REPO_PASSWORD }}
+      NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
