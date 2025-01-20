@@ -24,7 +24,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-import javax.jms.JMSException;
+import jakarta.jms.JMSException;
 //import javax.naming.Context;
 
 import org.apache.activemq.ActiveMQConnection;
