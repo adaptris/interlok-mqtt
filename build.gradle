@@ -11,8 +11,8 @@ plugins {
 }
 
 ext {
-  interlokCoreVersion = project.findProperty('interlokCoreVersion') ?: '5.0-SNAPSHOT'
-  releaseVersion = project.findProperty('releaseVersion') ?: '5.0-SNAPSHOT'
+  interlokCoreVersion = project.findProperty('interlokCoreVersion') ?: '5.1-SNAPSHOT'
+  releaseVersion = project.findProperty('releaseVersion') ?: '5.1-SNAPSHOT'
   nexusBaseUrl = project.findProperty('nexusBaseUrl') ?: 'https://nexus.adaptris.net/nexus'
   mavenPublishUrl = project.findProperty('mavenPublishUrl') ?: nexusBaseUrl + '/content/repositories/snapshots'
   javadocsBaseUrl = nexusBaseUrl + "/content/sites/javadocs/com/adaptris"
@@ -31,7 +31,7 @@ ext {
   organizationUrl = "http://www.adaptris.com"
   slf4jVersion = "2.0.17"
   mockitoVersion = '5.2.0'
-  activeMqVersion = "5.18.3"
+  activeMqVersion = "6.1.5"
 }
 
 sourceCompatibility = JavaVersion.VERSION_17

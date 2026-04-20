@@ -16,7 +16,7 @@
 
 package com.adaptris.core.mqtt;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallbackExtended;
