@@ -75,9 +75,7 @@ public class EmbeddedActiveMqMqtt {
     brokerDataDir = createTempFile(true);
     broker = createBroker();
     broker.start();
-    while (!broker.isStarted()) {
-      Thread.sleep(100);
-    }
+    broker.waitUntilStarted();
   }
 
   public BrokerService createBroker() throws Exception {
@@ -107,19 +105,15 @@ public class EmbeddedActiveMqMqtt {
   }
 
   public void destroy() {
-    new Thread(new Runnable() {
-
-      @Override
-      public void run() {
-        try {
-          stop();
-          release(port);
-        }
-        catch (Exception e) {
-
-        }
-      }
-    }).start();
+    try {
+      stop();
+    }
+    catch (Exception e) {
+      throw new RuntimeException("Failed to stop embedded MQTT broker", e);
+    }
+    finally {
+      release(port);
+    }
   }
 
   public void stop() throws Exception {
