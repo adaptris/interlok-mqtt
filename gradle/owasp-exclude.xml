@@ -37,4 +37,27 @@ Suppress log4j1.2 because there's a dependency that should be excluded at runtim
     <packageUrl regex="true">^pkg:maven/org\.eclipse\.jetty(\.http2|\.websocket)?/.+@10\.0\.26$</packageUrl>
     <cve>CVE-2026-2332</cve>
   </suppress>
+  <suppress>
+    <notes><![CDATA[
+      ActiveMQ 5.19.6 is the current pinned version. No newer 5.19.x release is available in Maven
+      Central that resolves these CVEs. Review when a patched release becomes available.
+    ]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.apache\.activemq/activemq.*@5\.19\.6$</packageUrl>
+    <cve>CVE-2026-42253</cve>
+    <cve>CVE-2026-42588</cve>
+    <cve>CVE-2026-45505</cve>
+    <cve>CVE-2026-46605</cve>
+    <cve>CVE-2026-49157</cve>
+    <cve>CVE-2026-49270</cve>
+    <cve>CVE-2026-49432</cve>
+    <cve>CVE-2026-49434</cve>
+    <cve>CVE-2026-49877</cve>
+    <cve>CVE-2026-50734</cve>
+    <cve>CVE-2026-52760</cve>
+    <cve>CVE-2026-53916</cve>
+    <cve>CVE-2026-53917</cve>
+    <cve>CVE-2026-54475</cve>
+    <cve>CVE-2026-59878</cve>
+    <cve>CVE-2026-61487</cve>
+  </suppress>
 </suppressions>
